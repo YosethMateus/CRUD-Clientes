@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Gestión de Clientes</title>
+    <link rel="stylesheet" href="../public/css/styles.css" />
+</head>
+
+<body>
+    <div class="card">
+        <div class="card-header">
+            <h2>Gestión de Clientes</h2>
+        </div>
+        <div class="card-body">
+            <form id="clienteForm">
+                <input type="text" name="name" id="name" placeholder="Nombre" required />
+                <input type="email" name="email" id="email" placeholder="Correo" required />
+                <input type="text" name="city" id="city" placeholder="Ciudad" required />
+                <input type="text" name="telephone" id="telephone" placeholder="Teléfono" required />
+                <button type="submit">Agregar Cliente</button>
+            </form>
+        </div>
+
+    </div>
+    <br>
+    <div class="card">
+        <div class="card-header" id="listTittle">
+            <h2>Listado de Clientes</h2>
+        </div>
+        <div class="card-body" id="clientList">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Ciudad</th>
+                        <th>Teléfono</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaClientes"></tbody>
+            </table>
+        </div>
+        <div class="card-body" id="formEdit" style="display: none;" onsubmit="updateCliente(event)">
+            <form>
+                <input type="hidden" name="id" id="editId" />
+                <input type="text" name="name" id="editName" placeholder="Nombre" required />
+                <input type="email" name="email" id="editEmail" placeholder="Correo" required />
+                <input type="text" name="city" id="editCity" placeholder="Ciudad" required />
+                <input type="text" name="telephone" id="editTelephone" placeholder="Teléfono" required />
+                <button type="submit">Editar Cliente</button>
+                <br>
+            </form>
+            <br>
+            <button onclick="back()">Volver</button>
+        </div>
+    </div>
+    <script src="../public/js/app.js"></script>
+</body>
+
+</html>
